@@ -29,4 +29,10 @@ export class ReviewService {
       })
       .exec();
   }
+
+  async deleteByProductId(productId: string) {
+    return this.reviewModel
+      .deleteMany({ productId: Types.ObjectId(productId) })
+      .exec();
+  }
 }
